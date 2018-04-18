@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+
+    <div class="container">
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Username</th>
+            </tr>
+
+            <% pathologists.forEach(function(pathologist){ %>
+                <tr class="data">
+                    <td>
+                        <a class="doctor" href="/pathologist/<%=pathologist._id%>/edit"><%=pathologist.name %></a>
+                        
+                    </td>
+                    <td>
+                        <%=pathologist.role %>
+                    </td>
+                    <td>
+                        <%=pathologist.username %>
+                    </td>
+                </tr>
+                <% }); %>
+        </table>
+        
+        <p class="doctorbutton">
+            <a href="/pathologist/new">
+                <button type="button" class="btn btn-md btn-info">Add Pathologist</button>
+            </a>
+        </p>
+
+    </div>
+
+
+    <% include ../partials/footer %>

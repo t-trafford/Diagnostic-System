@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+        <% appointments.forEach(function(appointment){ %>
+            <div class="col-md-3 col-md-6">
+                <div class="img-thumbnail">
+                    <hr>
+                    <figcaption class="figure-caption text-left">
+                        <p>
+                         appointment time:   <%= appointment.time %><br>
+                         appointment date:    <%= appointment.date %><br>
+                        </p>
+                    </figcaption>
+                    <hr>
+              
+                </div>
+            </div>
+        <% }); %>
+        
+        <% include ../partials/footer %> 

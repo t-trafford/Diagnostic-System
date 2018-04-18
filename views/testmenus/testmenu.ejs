@@ -1,0 +1,39 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+        <% tests.forEach(function(test){ %>
+            <div class="col-md-3 col-md-6">
+                <div class="img-thumbnail">
+                    <h2>
+                        <a href="/testmenu/<%= test._id %>"><%= test.name %></a>
+                    </h2>
+                    <hr>
+                    <figcaption class="figure-caption text-left">
+                        <p>
+                            <%= test.pretest %>
+                        </p>
+                        <p>
+                            <%= test.delivery%>
+                        </p>
+                    </figcaption>
+                    <hr>
+                    <figcaption class="figure-caption text-right">
+                        <p class="button">
+                            <a class="btn btn-info btn-md" href="/testmenu/<%=test._id%>/appointment/new">Book Now</a>
+                        </p>
+                    </figcaption>   
+                </div>
+            </div>
+        <% }); %>
+        
+        <!-- CHECK FOR ADMIN -->
+        <% if(currentUser && currentUser.username === 'akshay14021') { %>
+            <p class="addbutton">
+                <a class="btn btn-danger btn-md" href="/testmenu/new">Add New Test</a>
+            </p>
+        <% } %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

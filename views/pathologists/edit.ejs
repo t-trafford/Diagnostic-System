@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+    <div class="container">
+        <h1 class="text">Edit
+            <%= pathologist.name %>
+        </h1>
+        <hr>
+        <div class="row">
+            <div class="formcontrol">
+                <form action="/pathologist/<%= pathologist._id %>/?_method=put" method="post">
+                    <div class="form-group">
+                        <input class="form-control" type="text" value="<%= pathologist.name %>" name="pathologist[name]">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" value="<%= pathologist.role %>" name="pathologist[role]">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" value="<%= pathologist.username %>" name="pathologist[username]">
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-success btn-block">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <% include ../partials/footer %>

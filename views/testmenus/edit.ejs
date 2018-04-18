@@ -1,0 +1,42 @@
+<% include ../partials/header %>
+
+    <div class="container">
+        <h1 class="text">Edit <%= test.name %></h1>
+        <hr>
+        <div class="row">
+            <div class="formcontrol">
+                <form action="/testmenu/<%= test._id %>/?_method=put" method="post">
+                    <div class="form-group">
+                        <input class="form-control" type="text" value="<%= test.name %>" name="test[name]">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" value="<%= test.description %>" name="test[description]">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" value="<%= test.type %>" name="test[type]">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" value="<%= test.pretest %>" name="test[pretest]">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" value="<%= test.delivery %>" name="test[delivery]">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" value="<%= test.category %>" name="test[category]">
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-success btn-block">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <% include ../partials/footer %>

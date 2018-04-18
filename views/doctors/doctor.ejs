@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<div class="container">
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Speciality</th>
+            <th>Username</th>
+        </tr>
+        
+        <% doctors.forEach(function(doctor){ %>
+            <tr class="data">
+                <td><a class="doctor" href="/doctors/<%=doctor._id%>/edit"><%=doctor.name %></a></td>
+                <td><%=doctor.speciality %></td>
+                <td><%=doctor.username %></td>
+            </tr>
+        <% }); %>
+    </table>
+
+    <p class="doctorbutton">
+        <a href="/doctors/new"><button type="button" class="btn btn-md btn-info">Add Doctor</button></a>
+    </p>
+    
+    
+
+</div>
+
+
+<% include ../partials/footer %>

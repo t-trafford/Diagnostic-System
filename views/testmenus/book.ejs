@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+    <div class="container">
+        <h1 class="text">Book <%= test.name %></h1>
+        <hr>
+        <div class="row">
+            <div class="formcontrol">
+                <form action="/testmenu/<%=test._id%>/appointment" method="post">
+                    <div class="form-group">
+                        <input class="form-control" type="date" name="book[date]" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" type="time" name="book[time]" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-success btn-block">Book Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <% include ../partials/footer %>
